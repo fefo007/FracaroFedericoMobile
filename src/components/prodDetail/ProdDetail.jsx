@@ -2,26 +2,30 @@ import { View, Text,Image,Button } from 'react-native'
 import React from 'react'
 import styles from './styles'
 
-const ProdDetail = ({image,name,descript,price}) => {
+const ProdDetail = ({item}) => {
   return (
-    <View style={styles.detail}>
-        <Image   
-        source={image}/>
+    <View style={styles.container}>
+      <View style={styles.card}>
+        <Image
+        style={styles.image}   
+        source={item.image}
+        />
         <Text>
-            {name}
+            {item.name}
         </Text>
         <Text>
-            {descript}
+            {item.descript}
         </Text>
         <Text>
-          ${price}
+          ${item.price}
         </Text>
-        <View>
+        <View style={styles.buttoms}>
             <Button
             title='Comprar'/>
             <Button
             title='+Carrito'/>
         </View>
+      </View>
     </View>
   )
 }

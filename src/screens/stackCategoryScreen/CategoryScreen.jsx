@@ -1,16 +1,22 @@
 import { FlatList,View} from 'react-native'
 import React from 'react'
-import {categories} from '../../data/categories'
 import CustomButtom from '../../components/customButton/CustomButtom'
 import styles from './styles'
+import { useSelector,useDispatch } from 'react-redux'
+import { selectedCategory } from '../../store/actions/categories.action'
+import {categories} from '../../data/categories'
 
 
 const CategoryScreen = ({navigation}) => {
 
-  const selectedCategory = (item)=>{
+  // const categories = useSelector(state=>state.categories.categories)
+  // const dispatch = useDispatch()
+  
+  const handleSelected = (item)=>{
+    // dispatch(selectedCategory(item.id))
     navigation.navigate('Products',{
-      catId:item.id,
-      catName:item.name
+      id:item.id,
+      name:item.name
     })
   }
 
@@ -18,7 +24,7 @@ const CategoryScreen = ({navigation}) => {
     <View>
       <CustomButtom
       buttomName={item.name}
-      buttonAction={selectedCategory}
+      buttonAction={handleSelected}
       styleimageContainer={styles.imageContainer}
       styleContainer={styles.buttonContainer}
       styletextContainer={styles.textContainer}

@@ -26,6 +26,12 @@ const styles= StyleSheet.create({
         shadowRadius: 7.49,
         elevation: 12,
         marginBottom:50
+    },
+    scroll:{
+        alignContent:'center',
+        justifyContent:'center',
+        alignItems:'center',
+        padding:5
     }
 })
 

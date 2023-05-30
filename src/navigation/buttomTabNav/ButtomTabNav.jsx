@@ -46,6 +46,12 @@ const ButtomTabNav = () => {
                     />
                 )
             },
+            headerTitleContainerStyle:{width:'50%'},
+            headerRightContainerStyle:{flexDirection:'row',
+            justifyContent:'flex-start',
+            alignItems:'center',
+            paddingBottom:10,
+            width:'50%'}
         }}
         >
             <buttomTab.Screen 
