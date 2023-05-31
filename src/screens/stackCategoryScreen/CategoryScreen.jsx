@@ -23,6 +23,7 @@ const CategoryScreen = ({navigation}) => {
   const renderCategories = ({item})=>(
     <View>
       <CustomButtom
+      item={item}
       buttomName={item.name}
       buttonAction={handleSelected}
       styleimageContainer={styles.imageContainer}

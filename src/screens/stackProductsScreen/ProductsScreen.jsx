@@ -12,7 +12,7 @@ const ProductsScreen = ({route,navigation}) => {
 console.log(route.params)
 
     const filterProd=products.filter(
-        prod=>prod.category===route.params.catName
+        prod=>prod.category===route.params.name
     )
     
     const categorySelected = route.params.catName
@@ -55,7 +55,7 @@ return (
         <View style={styles.card}>
             <FlatList 
             contentContainerStyle={styles.scroll}
-            data={products}
+            data={filterProd}
             renderItem={renderProducts}
             keyExtractor={item=>item.id}
             numColumns={2}

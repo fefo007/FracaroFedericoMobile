@@ -9,7 +9,7 @@ export const products = [
     {
         id:1,
         name:'Porta lapicera',
-        category:'porcelana',
+        category:'Porcelana',
         description:'jkdsjksjdksk',
         image:image1,
         stock:5,
@@ -18,7 +18,7 @@ export const products = [
     {
         id:2,
         name:'Lapiceras decoradas',
-        category:'porcelana',
+        category:'Porcelana',
         description:'dfdfererere',
         image:image2,
         stock:10,
@@ -27,7 +27,7 @@ export const products = [
     {
         id:3,
         name:'Contenedor decorado',
-        category:'tela',
+        category:'Tela',
         description:'fdlpofdpofdp',
         image:image3,
         stock:5,
@@ -36,7 +36,7 @@ export const products = [
     {
         id:4,
         name:'Bolso decorado',
-        category:'tela',
+        category:'Tela',
         description:'dfdkfodkfodk',
         image:image4,
         stock:8,
@@ -45,7 +45,7 @@ export const products = [
     {
         id:5,
         name:'Almohadon para pintar',
-        category:'tela',
+        category:'Tela',
         description:'fdfrfefefef',
         image:image5,
         stock:3,
@@ -54,7 +54,7 @@ export const products = [
     {
         id:6,
         name:'Frascos decorados',
-        category:'porcelana',
+        category:'Porcelana',
         description:'djdifjdfjdif',
         image:image6,
         stock:8,

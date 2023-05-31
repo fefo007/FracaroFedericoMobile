@@ -7,7 +7,7 @@ const CustomCard = ({item,onCart,onFavorite,onSelect}) => {
 return (
     <View style={styles.card}>
         <TouchableOpacity
-        onPress={onSelect}
+        onPress={()=>onSelect(item)}
         >
             <Image  
             borderRadius={20}
@@ -23,13 +23,13 @@ return (
         <View style={styles.buttoms}>
             <CustomButtom 
             buttomName={'Favoritos'} 
-            buttonAction={onFavorite}
+            buttonAction={()=>console.log('a favoritos')}
             styleimageContainer={styles.imageButton}
             styleContainer={styles.buttomContainer}
             />
             <CustomButtom 
             buttomName={'Carrito'} 
-            buttonAction={onCart}
+            buttonAction={()=>console.log('al carrito')}
             styleimageContainer={styles.imageButton}
             styleContainer={styles.buttomContainer}
             />

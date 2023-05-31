@@ -3,6 +3,7 @@ import React from 'react'
 import styles from './styles'
 
 const CustomButtom = ({
+    item,
     buttonAction,
     imageUrl,
     buttomName,
@@ -14,7 +15,7 @@ const CustomButtom = ({
 
 return (
     <TouchableOpacity 
-    onPress={buttonAction}
+    onPress={()=>buttonAction(item)}
     style={{...styles.container,...styleContainer}}
     >
         <View style={{...styles.imageContainer,...styleimageContainer}}>
