@@ -24,8 +24,20 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.37,
         shadowRadius: 7.49,
         elevation: 12,
-        marginBottom:50
+        marginBottom:50,
+    },
+    footer:{
+        backgroundColor:'red',
+        flexDirection:'row'
+    },
+    imageButton:{
+        width:0,
+        height:0
+    },
+    buttomContainer:{
+        width:'45%',
     }
+
 })
 
 export default styles

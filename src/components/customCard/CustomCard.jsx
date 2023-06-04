@@ -29,7 +29,7 @@ return (
             />
             <CustomButtom 
             buttomName={'Carrito'} 
-            buttonAction={()=>console.log('al carrito')}
+            buttonAction={()=>onCart(item)}
             styleimageContainer={styles.imageButton}
             styleContainer={styles.buttomContainer}
             />

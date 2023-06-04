@@ -3,33 +3,29 @@ import { View,FlatList,Text} from 'react-native'
 import React, { useEffect } from 'react'
 import CustomCard from '../../components/customCard/CustomCard'
 import styles from './styles'
-// import { useNavigation } from '@react-navigation/native'
 import { useSelector,useDispatch } from 'react-redux'
 import { filteredProducts,selectedProduct } from '../../store/actions/products.action'
-import {products} from '../../data/products'
+import { addItem } from '../../store/actions/cart.action'
+// import {products} from '../../data/products'
 
-const ProductsScreen = ({route,navigation}) => {
-console.log(route.params)
+const ProductsScreen = ({navigation}) => {
 
-    const filterProd=products.filter(
-        prod=>prod.category===route.params.name
-    )
-    
-    const categorySelected = route.params.catName
 
-        // const categorySelected = useSelector(state=>state.categories.selected)
-    // const filtredProds = useSelector(state=>state.products.filteredProds) 
-    // const dispatch = useDispatch()
-    // const navigation=useNavigation()
+    const dispatch = useDispatch()
+    const categorySelected = useSelector(state=>state.categories.selected)
+    const filterProds = useSelector(state=>state.products.filteredProds) 
 
-    // useEffect(()=>{
-    //     dispatch(filteredProducts(categorySelected.id))
-    // },[])
+    useEffect(()=>{
+        dispatch(filteredProducts(categorySelected.catId))
+    },[])
+
+    const handleOnCart = (item)=>{
+        dispatch(addItem(item))
+    }
 
     const handleSelected = (item)=>{
-        // dispatch(selectedProduct(item.id))
+        dispatch(selectedProduct(item.id))
         navigation.navigate('Detail',{
-            item:item,
             name:item.name
         })
     }
@@ -38,7 +34,7 @@ console.log(route.params)
             <CustomCard 
             item={item} 
             onSelect={handleSelected}
-            // onCart={handleOnCart} 
+            onCart={handleOnCart} 
             // onFavorite={handleOnFavorite}
             />
         </View>
@@ -55,7 +51,7 @@ return (
         <View style={styles.card}>
             <FlatList 
             contentContainerStyle={styles.scroll}
-            data={filterProd}
+            data={filterProds}
             renderItem={renderProducts}
             keyExtractor={item=>item.id}
             numColumns={2}

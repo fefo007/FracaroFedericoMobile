@@ -26,7 +26,7 @@ return (
                     precio: ${item.price * item.quantity}
                 </Text>
             </View>
-            <TouchableOpacity onPress={()=>{onDelete}}>
+            <TouchableOpacity onPress={()=>{onDelete(item.id)}}>
                 <Fontisto name="trash" size={24} color="red" />
             </TouchableOpacity>
         </View>

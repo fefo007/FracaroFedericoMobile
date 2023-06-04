@@ -2,18 +2,21 @@ import { View } from 'react-native'
 import React from 'react'
 import ProdDetail from '../../components/prodDetail/ProdDetail'
 import styles from './styles'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { addItem } from '../../store/actions/cart.action'
 
-const DetailScreen = ({route}) => {
-
-  // const product = useSelector(state=>state.products.selectedProd)
-  console.log(route.params)
-  const product = route.params.item
-
+const DetailScreen = () => {
+  const dispatch = useDispatch()
+  const product = useSelector(state=>state.products.selectedProd)
+  // const product = route.params.item
+  const handleOnCart = ()=>{
+    dispatch(addItem(product))
+  }
   return (
     <View style={styles.container}>
         <ProdDetail 
           item={product}
+          onCart={handleOnCart}
         />
     </View>
   )

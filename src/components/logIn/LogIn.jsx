@@ -1,4 +1,4 @@
-import { View, Text, Button,TextInput } from 'react-native'
+import { View, Text, Button,TextInput,KeyboardAvoidingView } from 'react-native'
 import React, { useState } from 'react'
 import styles from './styles'
 
@@ -24,7 +24,7 @@ const LogIn = ({onLogIn}) => {
         }
 
 return (
-    <View style={styles.logContainer}>
+    <KeyboardAvoidingView style={styles.logContainer}>
         <Text style={styles.text}>
             Inicie sesion
         </Text>
@@ -45,7 +45,7 @@ return (
         <Button 
         title='ingresar' 
         onPress={()=>{onLogIn(registerUsers)}}/>
-    </View>
+    </KeyboardAvoidingView>
     )
 }
 
