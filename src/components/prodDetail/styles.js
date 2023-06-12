@@ -28,11 +28,42 @@ const styles = StyleSheet.create({
     },
     image:{
         width:'80%',
-        height:'60%',
-        borderRadius:10
+        height:'50%',
+        borderRadius:10,
+        marginTop:20
+    },
+    textsCont:{
+        flexDirection:'column',
+        marginTop:25,
+        marginBottom:25,
+        alignItems:'center'
+    },
+    text:{
+        fontSize:20,
     },
     buttoms:{
-        flexDirection:'row'
+        flexDirection:'column',
+        width:150
+    },
+    buttonContainer:{
+        marginTop:10,
+        marginBottom:2,
+        borderRadius:15,
+        width:'100%',
+        height:50
+    },
+    imageContainer:{
+        width:0,
+        height:0
+    },
+    textContainer:{
+        width:'100%',
+        height:'100%',
+        justifyContent:'center',
+        alignItems:'center',
+    },
+    buttomText:{
+        fontSize:25
     }
 })
 

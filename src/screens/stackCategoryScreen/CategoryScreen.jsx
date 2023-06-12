@@ -4,7 +4,6 @@ import CustomButtom from '../../components/customButton/CustomButtom'
 import styles from './styles'
 import { useSelector,useDispatch } from 'react-redux'
 import { selectedCategory } from '../../store/actions/categories.action'
-// import {categories} from '../../data/categories'
 
 
 const CategoryScreen = ({navigation}) => {
@@ -13,10 +12,8 @@ const CategoryScreen = ({navigation}) => {
   const dispatch = useDispatch()
   
   const handleSelected = (item)=>{
-    dispatch(selectedCategory(item.id))
-    navigation.navigate('Products',{
-      name:item.name
-    })
+    dispatch(selectedCategory(item.name))
+    navigation.navigate('Products')
   }
 
   const renderCategories = ({item})=>(

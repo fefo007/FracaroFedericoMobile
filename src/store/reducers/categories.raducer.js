@@ -10,9 +10,9 @@ const CategoryReducer = (state=initialState,action)=>{
     switch (action.type) {
         case SELECTED_CATEGORY:
             const indexCat = state.categories.findIndex(
-                cat=>cat.id===action.categoryId
+                cat=>cat.name === action.categoryName
             )
-            if(indexCat===-1){
+            if(indexCat === -1){
                 return state
             }
             return {...state,selected:state.categories[indexCat]}

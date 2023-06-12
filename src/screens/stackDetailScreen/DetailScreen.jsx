@@ -8,7 +8,7 @@ import { addItem } from '../../store/actions/cart.action'
 const DetailScreen = () => {
   const dispatch = useDispatch()
   const product = useSelector(state=>state.products.selectedProd)
-  // const product = route.params.item
+
   const handleOnCart = ()=>{
     dispatch(addItem(product))
   }

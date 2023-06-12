@@ -1,9 +1,10 @@
 
-import { NavigationContainer } from '@react-navigation/native'
+// import { NavigationContainer } from '@react-navigation/native'
 import {useFonts} from 'expo-font'
-import ButtonTabNav from './src/navigation/buttomTabNav/ButtomTabNav'
+// import ButtonTabNav from './src/navigation/buttomTabNav/ButtomTabNav'
 import { Provider } from 'react-redux';
 import store from './src/store';
+import IndexNavigation from './src/navigation' 
 
 
 export default function App() {
@@ -17,9 +18,10 @@ export default function App() {
 
   return (
     <Provider store={store}>
-      <NavigationContainer >
+      {/* <NavigationContainer >
         <ButtonTabNav/>
-      </NavigationContainer>
+      </NavigationContainer> */}
+      <IndexNavigation/>
     </Provider>
   )
 

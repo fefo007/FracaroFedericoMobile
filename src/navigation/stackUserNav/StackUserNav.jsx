@@ -7,7 +7,12 @@ const stack = createStackNavigator()
 
 const StackUserNav = () => {
   return (
-    <stack.Navigator>
+    <stack.Navigator
+    initialRouteName='User'
+    screenOptions={{
+      headerShown:false
+    }}
+    >
       <stack.Screen name='User' component={UserScreen}/>
     </stack.Navigator>
   )

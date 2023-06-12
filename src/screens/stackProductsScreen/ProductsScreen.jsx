@@ -6,17 +6,16 @@ import styles from './styles'
 import { useSelector,useDispatch } from 'react-redux'
 import { filteredProducts,selectedProduct } from '../../store/actions/products.action'
 import { addItem } from '../../store/actions/cart.action'
-// import {products} from '../../data/products'
+
 
 const ProductsScreen = ({navigation}) => {
-
 
     const dispatch = useDispatch()
     const categorySelected = useSelector(state=>state.categories.selected)
     const filterProds = useSelector(state=>state.products.filteredProds) 
 
     useEffect(()=>{
-        dispatch(filteredProducts(categorySelected.catId))
+        dispatch(filteredProducts(categorySelected.name))
     },[])
 
     const handleOnCart = (item)=>{
@@ -25,9 +24,7 @@ const ProductsScreen = ({navigation}) => {
 
     const handleSelected = (item)=>{
         dispatch(selectedProduct(item.id))
-        navigation.navigate('Detail',{
-            name:item.name
-        })
+        navigation.navigate('Detail')
     }
     const renderProducts=({item})=>(
         <View>
@@ -45,7 +42,7 @@ return (
     <View style={styles.container}>
         <View style={styles.text}>
             <Text>
-                {categorySelected}
+                {categorySelected.name}
             </Text>
         </View>
         <View style={styles.card}>

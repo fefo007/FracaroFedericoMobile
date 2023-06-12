@@ -1,9 +1,9 @@
 
 export const SELECTED_CATEGORY = 'SELECTED_CATEGORY' 
 
-export const selectedCategory = (catId)=>(
+export const selectedCategory = (catName)=>(
     {
         type:SELECTED_CATEGORY,
-        categoryId:catId
+        categoryName:catName
     }
 )

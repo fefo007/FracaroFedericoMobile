@@ -1,18 +1,19 @@
-import {URL_SIGUP} from '../../constants/dataBase'
+import {URL_SIGNUP} from '../../constants/dataBase'
 
 export const SIGNUP = 'SIGNUP'
 
-export const signup = (email,pass)=>{
+export const signUp = (email,password)=>{
+    console.log(email,password)
     return async dispatch => {
         try {
-            const res = await fetch(URL_SIGUP,{
+            const res = await fetch(URL_SIGNUP,{
                 method:'POST',
                 headers:{
                     'Content-Type':'aplication/json'
                 },
                 body:JSON.stringify({
                     email,
-                    pass,
+                    password:password,
                     returnSecureToken:true
                 })
             })

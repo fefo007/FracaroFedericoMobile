@@ -12,7 +12,8 @@ return (
             <Image  
             borderRadius={20}
             style={styles.images} 
-            source={item.image}/>
+            source={item.image}
+            />
         </TouchableOpacity>
         <Text>
             {item.name}

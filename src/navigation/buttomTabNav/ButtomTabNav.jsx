@@ -19,9 +19,9 @@ const buttomTab = createBottomTabNavigator()
 
 const ButtomTabNav = () => {
 
-    const renderUser = ()=>(
-        <StackUserNav/>
-    )
+    // const renderUser = ()=>(
+    //     <StackUserNav/>
+    // )
 
     return (
         <buttomTab.Navigator
@@ -37,15 +37,15 @@ const ButtomTabNav = () => {
                 fontWeight:'bold'
             },
             headerShown:true,
-            headerRight:()=>{
-                return(
-                    <CustomButtom 
-                    styleContainer={styles.buttom} 
-                    imageUrl={iconUser}
-                    buttonAction={renderUser}
-                    />
-                )
-            },
+            // headerRight:()=>{
+            //     return(
+            //         <CustomButtom 
+            //         styleContainer={styles.buttom} 
+            //         imageUrl={iconUser}
+            //         buttonAction={renderUser}
+            //         />
+            //     )
+            // },
             headerTitleContainerStyle:{width:'50%'},
             headerRightContainerStyle:{flexDirection:'row',
             justifyContent:'flex-start',
@@ -123,6 +123,25 @@ const ButtomTabNav = () => {
                         name={iconName} 
                         size={30} 
                         color={colors.primaryColor}
+                        />
+                    </View>
+                )
+            }}}
+            />
+                        <buttomTab.Screen 
+            name='UserTabNav' 
+            component={StackUserNav}
+            options={
+                {
+                title:'Mis Datosclear',    
+                tabBarIcon:({focused})=>{
+                let iconName = focused ?"user" : "user-o"
+            return(
+                    <View>
+                        <FontAwesome 
+                        name={iconName} 
+                        size={30} 
+                        color={colors.primaryColor} 
                         />
                     </View>
                 )
