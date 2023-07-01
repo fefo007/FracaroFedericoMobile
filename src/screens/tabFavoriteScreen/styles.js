@@ -26,6 +26,24 @@ const styles = StyleSheet.create({
         shadowRadius: 7.49,
         elevation: 12,
         marginBottom:50
+    },
+    emtyFavImageContainer:{
+        width:'100%',
+        height:'90%',
+        padding:20
+    },
+    emtyFavImage:{
+        width:'100%',
+        height:'80%',
+    },
+    favTextContainer:{
+        width:'100%',
+        height:150,
+        justifyContent:'center',
+        alignItems:'center'
+    },
+    favText:{
+        fontSize:30
     }
 })
 

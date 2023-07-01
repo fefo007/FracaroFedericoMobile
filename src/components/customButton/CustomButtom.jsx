@@ -1,11 +1,13 @@
 import { Image, Text, View,TouchableOpacity } from 'react-native'
-import React from 'react'
+import React,{ useState } from 'react'
 import styles from './styles'
+
 
 const CustomButtom = ({
     item,
     buttonAction,
     imageUrl,
+    imageUrlChange,
     buttomName,
     styleContainer,
     styleimageContainer,
@@ -13,14 +15,28 @@ const CustomButtom = ({
     styleText
 }) => {
 
+    const [btnImg,setBtnImg] = useState(imageUrl)
+
+    const buttomImage = ()=>{
+        if(imageUrlChange && imageUrl){
+            setBtnImg(imageUrlChange)
+        }
+        if(btnImg===imageUrlChange){
+            setBtnImg(imageUrl)
+        }
+    }
+
 return (
     <TouchableOpacity 
-    onPress={()=>buttonAction(item)}
+    onPress={()=>{
+        buttonAction(item)
+        buttomImage()
+    }}
     style={{...styles.container,...styleContainer}}
     >
         <View style={{...styles.imageContainer,...styleimageContainer}}>
             <Image 
-            source={imageUrl} 
+            source={btnImg} 
             style={styles.image}
                 />
         </View>

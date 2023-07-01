@@ -32,17 +32,19 @@ const styles = StyleSheet.create({
         marginBottom:20,
         borderRadius:15,
         width:'100%',
-        height:50
-    },
-    imageContainer:{
-        width:0,
-        height:0
+        height:200
     },
     textContainer:{
         width:'100%',
         height:'100%',
         justifyContent:'center',
         alignItems:'center',
+        width:'100%',
+        height:50
+    },
+    imageContainer:{
+        width:'100%',
+        height:'75%'
     },
     buttomText:{
         fontSize:25

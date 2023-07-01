@@ -22,15 +22,13 @@ const styles = StyleSheet.create({
         width:150,
         height:250,
     },
-    imageButton:{
-        width:0,
-        height:0
-    },
     buttoms:{
         flexDirection:'row'
     },
     buttomContainer:{
         width:'45%',
+        backgroundColor:'transparent',
+        shadowColor:'transparent'
     }
 })
 

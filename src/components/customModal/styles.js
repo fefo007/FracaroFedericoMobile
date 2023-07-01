@@ -6,15 +6,22 @@ const styles = StyleSheet.create({
         alignItems:'center',
         justifyContent:'space-between',
         flexDirection:'column',
-        width:'50%',
-        height:'100%',
+        width:'80%',
+        height:'50%',
     },
     modalInnerContainer:{
         flex:1,
-        marginTop:60,
         backgroundColor:'rgba(52, 52, 52, 0.8)',
         justifyContent:'center',
-        alignItems:'flex-start',
+        alignItems:'center',
+    },
+    content:{
+        width:'100%',
+        height:'80%',
+        padding:10
+    },
+    text:{
+        fontSize:25
     }
 })
 

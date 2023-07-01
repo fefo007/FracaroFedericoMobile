@@ -5,14 +5,13 @@ const styles = StyleSheet.create({
     container:{
         flex:1,
         backgroundColor:colors.secundaryColor,
-        flexDirection:'row',
-        justifyContent:'center',
         alignItems:'center',
+        
     },
     card:{
         flexDirection:'column',
         width:'85%',
-        height:'80%',
+        height:500,
         backgroundColor:colors.tertiaryColor,
         borderRadius:20,
         shadowColor: "#000",
@@ -23,9 +22,8 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.37,
         shadowRadius: 7.49,
         elevation: 12,
-        marginBottom:50,
-        marginLeft:30,
-        padding:30
+        padding:20,
+        marginTop:'30%'
     },
     input:{
         width:300,
@@ -33,10 +31,33 @@ const styles = StyleSheet.create({
         backgroundColor:colors.secundaryColor,
         borderRadius:50,
         paddingLeft:10,
+        marginBottom:20,
+        
+    },
+    buttonContainer:{
+        marginTop:20,
+        marginBottom:5,
+        borderRadius:15,
+        width:'100%',
+        height:50
+    },
+    imageContainer:{
+        width:0,
+        height:0
+    },
+    textContainer:{
+        width:'100%',
+        height:'100%',
+        justifyContent:'center',
+        alignItems:'center',
+    },
+    buttomText:{
+        fontSize:25
     },
     text:{
         color:colors.primaryColor,
-        fontSize:20
+        fontSize:30,
+
     }
 })
 

@@ -5,28 +5,28 @@ import { Fontisto } from '@expo/vector-icons';
 import styles from './styles';
 
 const CartItem = ({item,onDelete}) => {
+    
 return (
     <View style={styles.item}>
-        <View>
-            <Image source={item.image}/>
+        <View style={styles.contImage}>
+            <Image
+            style={styles.image}
+            src={item.image}
+            />
         </View>
-        <View>
+        <View style={styles.contName}>
             <Text style={styles.headerText}>
                 {item.name}
             </Text>
+            <Text>
+                unidades:{item.quantity} ${item.price * item.quantity}
+            </Text>
         </View>
-        <View style={styles.info}>
-            <View>
-                <Text>
-                    unidades:{item.quantity}
-                </Text>
-            </View>
-            <View>
-                <Text>
-                    precio: ${item.price * item.quantity}
-                </Text>
-            </View>
-            <TouchableOpacity onPress={()=>{onDelete(item.id)}}>
+        <View>
+            <TouchableOpacity
+            style={styles.contDelete}
+            onPress={()=>{onDelete(item.id)}}
+            >
                 <Fontisto name="trash" size={24} color="red" />
             </TouchableOpacity>
         </View>

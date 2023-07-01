@@ -27,17 +27,39 @@ const styles = StyleSheet.create({
         marginBottom:50,
     },
     footer:{
-        backgroundColor:'red',
-        flexDirection:'row'
+        flexDirection:'row',
+        marginBottom:20,
     },
     imageButton:{
         width:0,
         height:0
     },
     buttomContainer:{
-        width:'45%',
+        width:'50%',
+        height:40
+    },
+    btnText:{
+        fontSize:20
+    },
+    textContainer:{
+        width:'100%',
+        paddingLeft:45,
+        paddingTop:5
+    },
+    totalText:{
+        fontSize:20,
+        marginTop:10,
+        marginRight:20
+    },
+    emtyCartImageContainer:{
+        width:'100%',
+        height:'90%',
+        padding:20
+    },
+    emtyCartImage:{
+        width:'100%',
+        height:'80%',
     }
-
 })
 
 export default styles

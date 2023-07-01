@@ -7,9 +7,9 @@ import { selectedCategory } from '../../store/actions/categories.action'
 
 
 const CategoryScreen = ({navigation}) => {
-
   const categories = useSelector(state=>state.categories.categories)
   const dispatch = useDispatch()
+
   
   const handleSelected = (item)=>{
     dispatch(selectedCategory(item.name))
@@ -20,6 +20,7 @@ const CategoryScreen = ({navigation}) => {
     <View>
       <CustomButtom
       item={item}
+      imageUrl={item.image}
       buttomName={item.name}
       buttonAction={handleSelected}
       styleimageContainer={styles.imageContainer}

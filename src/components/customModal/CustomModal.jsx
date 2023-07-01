@@ -1,6 +1,7 @@
-import { View ,Modal,Button} from 'react-native'
+import { View ,Modal,TouchableOpacity,Text} from 'react-native'
 import React from 'react'
 import styles from './styles'
+
 
 const CustomModal = ({isVisible,closeIt,content}) => {
   return (
@@ -10,13 +11,13 @@ const CustomModal = ({isVisible,closeIt,content}) => {
       transparent={true}
       >
         <View style={styles.modalInnerContainer}>
-          <View style={styles.modal}>
-            <Button
-            title='X'
-            onPress={closeIt}
-            />
-            {content}
+        <TouchableOpacity style={styles.modal} onPress={closeIt}>
+          <View style={styles.content}>
+            <Text style={styles.text}>
+              {content}
+            </Text>
           </View>
+        </TouchableOpacity>
         </View>
       </Modal>
   )

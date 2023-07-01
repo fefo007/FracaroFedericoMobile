@@ -10,18 +10,15 @@ import FavoriteScreen from '../../screens/tabFavoriteScreen/FavoriteScreen'
 import OrdersScreen from '../../screens/tabOrdersScreen/OrdersScreen'
 import StackUserNav from '../stackUserNav/StackUserNav'
 import StackCartNavigation from '../stackCartNavigation/StackCartNavigation'
-import CustomButtom from '../../components/customButton/CustomButtom'
-import iconUser from '../../assets/icons/user.png'
+import { useSelector } from 'react-redux';
 
 
 const buttomTab = createBottomTabNavigator()
 
-
 const ButtomTabNav = () => {
 
-    // const renderUser = ()=>(
-    //     <StackUserNav/>
-    // )
+    const cartItems = useSelector(state=>state.cart.quantity)
+    console.log(cartItems)
 
     return (
         <buttomTab.Navigator
@@ -37,15 +34,6 @@ const ButtomTabNav = () => {
                 fontWeight:'bold'
             },
             headerShown:true,
-            // headerRight:()=>{
-            //     return(
-            //         <CustomButtom 
-            //         styleContainer={styles.buttom} 
-            //         imageUrl={iconUser}
-            //         buttonAction={renderUser}
-            //         />
-            //     )
-            // },
             headerTitleContainerStyle:{width:'50%'},
             headerRightContainerStyle:{flexDirection:'row',
             justifyContent:'flex-start',
@@ -95,7 +83,8 @@ const ButtomTabNav = () => {
             component={StackCartNavigation}
             options={
                 {
-                title:'Mi Carrito',     
+                title:'Mi Carrito',
+                tabBarBadge:`${cartItems}`,     
                 tabBarIcon:({focused})=>{
                 let iconName = focused ? "cart":"cart-outline"
             return(
@@ -133,7 +122,7 @@ const ButtomTabNav = () => {
             component={StackUserNav}
             options={
                 {
-                title:'Mis Datosclear',    
+                title:'Mis Datos',    
                 tabBarIcon:({focused})=>{
                 let iconName = focused ?"user" : "user-o"
             return(

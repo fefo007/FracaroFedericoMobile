@@ -4,13 +4,13 @@ import React from 'react'
 import styles from './styles'
 
 const ProdDetail = ({item,onCart,onBuy}) => {
-  console.log(item)
+  
   return (
     <View style={styles.container}>
       <View style={styles.card}>
         <Image
         style={styles.image}   
-        source={item.image}
+        src={item.image}
         />
         <View style={styles.textsCont}>
           <Text style={styles.text}>
@@ -26,7 +26,7 @@ const ProdDetail = ({item,onCart,onBuy}) => {
         <View style={styles.buttoms}>
         <CustomButtom 
             buttomName={'Comprar'} 
-            buttonAction={()=>console.log('compra efectuada')}
+            buttonAction={()=>onBuy()}
             styleimageContainer={styles.imageContainer}
             styleContainer={styles.buttonContainer}
             styletextContainer={styles.textContainer}

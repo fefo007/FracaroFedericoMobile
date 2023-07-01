@@ -2,6 +2,7 @@ import { View, Text,Image,Alert } from 'react-native'
 import React,{useState} from 'react'
 import CustomButon from '../customButton/CustomButtom'
 import * as ImagePicker from 'expo-image-picker'
+import * as FileSystem from 'expo-file-system'  
 import styles from './styles'
 
 const ImageSelector = (props) => {
@@ -28,8 +29,20 @@ const ImageSelector = (props) => {
             aspect:[19,20],
             quality:0.7
         })
-        setpickedUrl(image.assets[0].uri)
-        props.onImage(image.assets[0].uri)
+        const img = image.assets[0].uri
+        setpickedUrl(img)
+        props.onImage(img)
+        const fileName = img.split('/').pop()
+        const path = FileSystem.documentDirectory + fileName
+        try{
+            FileSystem.moveAsync({
+                from:pickedUrl,
+                to:path
+            })
+        }catch(error){
+            console.log(error)
+            throw error
+        }
     }
 
 return (

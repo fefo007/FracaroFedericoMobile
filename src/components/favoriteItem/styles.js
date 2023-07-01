@@ -7,30 +7,28 @@ const styles = StyleSheet.create({
         borderBottomColor:colors.quaternaryColor,
         borderBottomWidth:3,
         flexDirection:"row",
-        justifyContent:'space-between'
     },
     headerText:{
-        fontSize:20,
+        fontSize:20
     },
+    // contInfo:{
+    //     flexDirection:"column",
+    //     flexWrap:'wrap',
+    //     alignItems:'center',
+    //     justifyContent:'space-between'
+    // },
     contImage:{
         height:70,
         width:60
     },
     image:{
         width:'100%',
-        height:'100%',
-        borderRadius:5
+        height:'100%'
     },
     contName:{
         flexWrap:"wrap",
-        padding:10,
-        width:220,
         padding:10
     },
-    contDelete:{
-        margin:20,
-        width:30,
-    }
 })
 
 export default styles

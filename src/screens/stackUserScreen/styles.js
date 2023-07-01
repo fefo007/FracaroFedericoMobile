@@ -26,6 +26,9 @@ const styles = StyleSheet.create({
         elevation: 12,
         marginBottom:50
     },
+    userText:{
+        fontSize:20,
+    }
 })
 
 export default styles
