@@ -1,19 +1,31 @@
 import { View, Text,FlatList,Image } from 'react-native'
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import styles from './styles'
 import CartItem from '../../components/cartItem/CartItem'
 import { useSelector,useDispatch } from 'react-redux'
-import { confirmCart, removeItem } from '../../store/actions/cart.action'
+import { confirmCart, postCart, putCart, removeItem } from '../../store/actions/cart.action'
 import CustomButtom from '../../components/customButton/CustomButtom'
 import emtyCart from '../../assets/products/carritoVacio.webp'
 import CustomModal from '../../components/customModal/CustomModal'
+
 
 const CartScreen = () => {
   const dispatch = useDispatch()
   const items = useSelector(state=>state.cart.items)
   const total = useSelector(state=>state.cart.total)
+  const user = useSelector(state=>state.auth.user)
+  const quantity = useSelector(state=>state.cart.quantity)
+  const cartId = useSelector(state=>state.cart.cartId)
   const [modalOn,setModalOn] = useState(false)
   
+  useEffect(()=>{
+    if(items !== []){
+      dispatch(putCart(cartId,items,total,user,quantity))
+    }
+    // else{
+    //   dispatch(postCart(items,total,user,quantity))
+    // }
+  },[items])
 
   const showModal = ()=>{
     setModalOn(true)

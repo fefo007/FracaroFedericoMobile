@@ -1,7 +1,7 @@
 import { SHOW_ERROR} from "../actions/error.action";
 
 const initialState = {
-    error:null
+    error:'success'
 }
 
 const ErrorReducer = (state=initialState,action)=>{

@@ -10,6 +10,7 @@ import CustomButtom from '../../components/customButton/CustomButtom'
 import CustomModal from '../../components/customModal/CustomModal'
 import { showError } from '../../store/actions/error.action'
 import {getProducts} from '../../store/actions/products.action'
+import { getCart } from '../../store/actions/cart.action'
 // import {postProducts} from '../../store/actions/products.action' 
 // import { products } from '../../data/prodToFirebase'
 
@@ -46,7 +47,6 @@ const AuthScreen = () => {
     const dispatch = useDispatch()
     const [error,setError] = useState(null)
     const err = useSelector(state=>state.error.error)
-    const p=useSelector(state=>state.products.products)
     const [modalOn,setModalOn] = useState(false)
 
     // PARA CARGAR PRODUCTOS A FIREBASE
@@ -64,7 +64,7 @@ const AuthScreen = () => {
     },[error])
 
     const showErr = (err)=>{
-        if(err!==null){
+        if(err!=='success'){
             setModalOn(true)
         }
     }

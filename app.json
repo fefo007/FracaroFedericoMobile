@@ -4,7 +4,8 @@
     "slug": "FracaroFedericoMobile",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./src/assets/icons/icon.png",
+    "icon": "./src/assets/icons/paint.png",
+    "platforms":  ["ios","android"],
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./src/assets/icons/logo.jpg",
@@ -19,7 +20,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./src/assets/icons/logo.jpg",
+        "foregroundImage": "./src/assets/icons/paint.png",
         "backgroundColor": "#DDFFBB"
       }
     },

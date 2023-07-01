@@ -1,10 +1,17 @@
 
-import { ADD_ITEM, CONFIRM_CART, REMOVE_ITEM } from "../actions/cart.action";
+import {
+    ADD_ITEM, 
+    CONFIRM_CART, 
+    GET_CART, 
+    POST_CART, 
+    REMOVE_ITEM 
+} from "../actions/cart.action";
 
 const initialState = {
     items:[],
     total:0,
-    quantity:0
+    quantity:0,
+    cartId:null
 }
 
 const totalCart = (list)=>{
@@ -38,6 +45,10 @@ const CartReducer = (state=initialState, action)=>{
             return {...state,items:updateItems,total:totalCart(updateItems)}
         case CONFIRM_CART:
             return {...state,items:[],total:0,quantity:0}
+        case GET_CART :
+            return {...state,items:action.payload.items,total:action.payload.total,quantity:action.payload.quantity,cartId:action.payload.id}
+        case POST_CART:
+            return state
         default:
             return state
         }

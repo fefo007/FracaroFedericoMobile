@@ -5,6 +5,7 @@ export const REMOVE_ITEM = 'REMOVE_ITEM'
 export const CONFIRM_CART='CONFIRM_CART'
 export const POST_CART = 'POST_CART'
 export const GET_CART = 'GET_CART'
+export const PUT_CART = 'PUT_CART'
 
 export const addItem = (item)=>({
     type:ADD_ITEM,
@@ -42,7 +43,7 @@ export const confirmCart = (items,total)=>{
     }
 }
 
-export const postCart = (items,total,username)=>{
+export const postCart = (items,total,username,quantity)=>{
     return async dispatch => {
         try {
             const response = await fetch(`${URL_API}/carritos.json`,{
@@ -53,7 +54,8 @@ export const postCart = (items,total,username)=>{
                 body:JSON.stringify({
                     username:username,
                     items:{...items},
-                    total:total
+                    total:total,
+                    quantity:quantity
                 }),
             })
             const result = await response.json()
@@ -68,25 +70,56 @@ export const postCart = (items,total,username)=>{
     }
 }
 
-export const getCart = ()=>{
+export const putCart = (id,items,total,username,quantity)=>{
     return async dispatch => {
         try {
-            const respornse = await fetch(`${URL_API}/carritos.json`,{
+            const response = await fetch(`${URL_API}/carritos/${id}.json`,{
+                method:'PUT',
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body:JSON.stringify({
+                    username:username,
+                    items:{...items},
+                    total:total,
+                    quantity:quantity
+                }),
+            })
+            const result = await response.json()
+            console.log(result)
+            dispatch({
+                type:PUT_CART,
+                confirm:true
+            })
+        } catch (error) {
+            console.log(error)
+        }
+    }
+}
+
+
+export const getCart = (username)=>{
+    return async dispatch => {
+        try {
+            const response = await fetch(`${URL_API}/carritos.json`,{
                 method:'GET',
                 headers:{
                     'Content-Type':'application/json'
                 }
             })
-            const result = await respornse.json()
-            console.log(result)
-            const cart = Object.keys(result).map(key=>({
+            const result = await response.json()
+            
+            const carts = Object.keys(result).map(key=>({
                 ...result[key],
                 id:key
             }))
-            dispatch({
+            const userCart = carts.find(item=>item.username === username)
+            console.log(userCart)
+            if(userCart.items)
+            {dispatch({
                 type:GET_CART,
-                payload:cart
-            })
+                payload:userCart
+            })}
         } catch (error) {
             console.log(error)
         }
